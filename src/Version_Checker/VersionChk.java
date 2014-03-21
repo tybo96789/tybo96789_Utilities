@@ -51,7 +51,7 @@ public class VersionChk {
         else
         {
             boolean status = false;
-            System.out.println("version.ver File Not Found....Downloading From Server");
+            System.out.println("\"version.ver\" File Not Found....Downloading From Server");
             status = updateVerFile();
             isNew = true;
             localHash = fileRead("version.ver").get(0);
@@ -74,7 +74,7 @@ public class VersionChk {
             {
                 System.out.println("Program is at the most current version!");
             }
-            else
+        else if(status == false && isNew == false)
             {
                 System.out.println("There is an update!");
             }
@@ -136,17 +136,7 @@ public class VersionChk {
      */
     private boolean compareVer(String a,String b)
     {
-        int compare = b.compareToIgnoreCase(a);
-        //System.out.println(compare);
-        if(compare == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
+        return b.equalsIgnoreCase(a);
     }
 /**
  * 
@@ -157,7 +147,7 @@ public class VersionChk {
         boolean status = false;
         try {
             File_Downloader.download(serverURL,fileName);
-            status = true;
+            status = new File(fileName).exists();
         } catch (IOException ex) {
             Logger.getLogger(VersionChk.class.getName()).log(Level.SEVERE, null, ex);
         }

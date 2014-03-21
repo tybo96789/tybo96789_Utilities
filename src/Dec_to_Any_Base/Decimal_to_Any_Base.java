@@ -2,7 +2,7 @@ package Dec_to_Any_Base;
 
 /**
  *
- * @author Tyler
+ * @author Tyler Atiburcio
  */
 public class Decimal_to_Any_Base {
     
