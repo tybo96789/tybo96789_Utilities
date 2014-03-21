@@ -17,7 +17,7 @@ public class Startable {
     {
         try
         {
-            if(args[0].compareTo("-update") == 0) update();
+            if(args[0].equalsIgnoreCase("-update")) update();
             else System.out.println("Argument Unknown");
         }catch(Exception e)
         {
