@@ -17,10 +17,13 @@ public class Startable {
     {
         try
         {
-            if(args[0].equalsIgnoreCase("-update")) update();
-            else System.out.println("Argument Unknown");
+            if(args[0] != null){
+                if(args[0].equalsIgnoreCase("-update")) update();
+                else System.out.println("Argument Unknown");
+            }
         }catch(Exception e)
         {
+           System.out.println(e.getMessage());
            System.exit(0);
         }
     }
@@ -36,6 +39,7 @@ public class Startable {
             }
         }catch(Exception e)
         {
+            System.out.println(e.getMessage());
             System.out.println("UPDATING FAILED!");
         }
     }
