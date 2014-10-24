@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Menu {
 
-    private ArrayList menu; //;mem space for a ArrayList called menu created but not int.
+    private ArrayList<String> menu; //;mem space for a ArrayList called menu created but not int.
     private final Scanner scan = new Scanner(System.in); //A Class wide scanner 
     private String title = "Menu"; //Default menu title
     private boolean niceMenu = false;
@@ -24,15 +24,15 @@ public class Menu {
      */
     public Menu()
     {
-        menu = new ArrayList();
+        menu = new ArrayList<String>();
     }
 /**
  * This constructor, passed a string will set the menu to the given string
  * @param newTitle 
  */
     public Menu(String newTitle){
-        menu = new ArrayList();
-        setTitle(newTitle);
+        menu = new ArrayList<String>();
+        this.setTitle(newTitle);
     }
     /**
      * This method adds a new menu entry
@@ -49,7 +49,7 @@ public class Menu {
      */
     private void setItem(int a, String item)
     {
-        menu.add(size, item); //broken :l
+        menu.add(a, item); //broken :l
     }
     /**
      * This method is meant for a end-user made menu with scanners and nextlines
@@ -75,7 +75,7 @@ public class Menu {
      */
     public String getItem(int place)
     {
-        return menu.get(place).toString();
+        return menu.get(place);
     }
     /**
      * This method prints all menu entries
