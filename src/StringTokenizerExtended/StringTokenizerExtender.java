@@ -12,6 +12,8 @@ import java.util.StringTokenizer;
  * @author Tyler_Atiburcio
  */
 public class StringTokenizerExtender extends StringTokenizer {
+    
+    private StringTokenizerExtender intance = this;
 
     public StringTokenizerExtender(String str, String delim, boolean returnDelims) {
         super(str, delim, returnDelims);
@@ -29,22 +31,37 @@ public class StringTokenizerExtender extends StringTokenizer {
     
     public boolean equals(StringTokenizer str)
     {
-        return super.toString().equals(str.toString());
+        return this.toString().equals(str.toString());
     }
     
     public boolean equals(String str)
     {
-        return super.toString().equals(str);
+        return this.toString().equals(str);
     }
     
     public boolean equalsIgnoreCase(StringTokenizer str)
     {
-        return super.toString().equalsIgnoreCase(str.toString());
+        return this.toString().equalsIgnoreCase(str.toString());
     }
     
     public boolean equalsIgnoreCase(String str)
     {
-        return super.toString().equalsIgnoreCase(str);
+        return this.toString().equalsIgnoreCase(str);
+    }
+    
+    public char[] getCharArray()
+    {
+        return this.toString().toCharArray();
+    }
+    
+    public String toUpperCase()
+    {
+        return this.toString().toUpperCase();
+    }
+    
+    public String toLowerCase()
+    {
+        return this.toString().toLowerCase();
     }
 
     @Override
