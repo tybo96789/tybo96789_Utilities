@@ -13,8 +13,6 @@ import java.util.StringTokenizer;
  */
 public class StringTokenizerExtender extends StringTokenizer {
     
-    private StringTokenizerExtender intance = this;
-
     public StringTokenizerExtender(String str, String delim, boolean returnDelims) {
         super(str, delim, returnDelims);
     }
